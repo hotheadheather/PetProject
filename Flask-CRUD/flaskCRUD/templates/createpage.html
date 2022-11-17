@@ -1,0 +1,104 @@
+
+{% extends 'base.html' %}
+{% include 'header.html' %}
+{% block title %} Home {% endblock %}
+ 
+ 
+{% block body %}
+
+<script>datePickerId = new Date();</script>
+
+
+
+
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+
+    <tr>
+        <td>Date</td>
+        <td><input type = "date" name = "date" id="datePickerId" class="form-control" required/></td>
+    </tr>
+    
+    <tr>
+        <td>First Name</td>
+        <td><input type = "text" name = "first_name" class="form-control" required/></td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td><input type = "text" name = "last_name" class="form-control" required/></td>
+    </tr>
+
+    <tr>
+        <td>Email</td>
+        <td><input type = "email" name = "email" class="form-control" /></td>
+    </tr>
+
+    <tr>
+        <td>Gender</td>
+        <td>
+        Male: <input type = "radio" name = "gender"  value="male" required/>
+         Female: <input type = "radio" name = "gender"  value="female" required/>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Food Type</td>
+        <td>
+        <select name="foodtype" class="form-control">
+            
+            <option value="dry dog food">dry dog food (lbs)</option>
+            <option value="canned dog food">canned dog food (oz)</option>
+            <option value="moist meaty">moist meaty</option>
+            <option value="dry cat food">dry cat food (lbs)</option>
+            <option value="canned cat food">canned cat food (oz)</option>
+            <option value="dog treats">dog treats (# of boxes)</option>
+            <option value="cat treats">cat treats (# of boxes)</option>
+            <option value="litter">litter</option>
+            <option value="bird">bird</option>
+            <option value="hamster">hamster</option>
+            <option value="gerbil">gerbil</option>
+            <option value="rabbit">rabbit</option>
+            <option value="guinea pig">guinea pig</option>
+            <option value="ferret">ferret</option>
+            <option value="turtle">turtle</option>
+            <option value="frog">frog</option>
+            <option value="other">other</option>
+            <option value="other"input="text">other</option>
+           
+         </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Amount</td>
+        <td><input type = "number" name = "amount" step="0.01" class="form-control" required/></td>
+    </tr>
+
+    <tr>
+        <td>Weight</td>
+        <td>
+            LBS : <input type="radio" name="weight"  value="lbs">
+            OZ : <input type="radio"  name="weight"  value="oz">
+            Count : <input type="radio"  name="weight"  value="count">
+
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">     
+        </td>
+
+        <td colspan="1">
+            <input type="submit" name="cancel" value="cancel" class="btn btn-danger">
+        </td>  
+    </tr>
+</table>
+  
+  </form>
+
+</div>
+{% endblock %}
+
+

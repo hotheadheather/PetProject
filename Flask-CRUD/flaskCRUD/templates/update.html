@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+ 
+ 
+{% block title %} Home {% endblock %}
+ 
+ 
+{% block body %}
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+
+  <td>Date</td>
+  <td><input type = "date" name = "date" class="form-control" value="{{donation.date}}" required /></td>
+</tr>
+
+    <tr>
+        <td>First Name</td>
+        <td><input type = "text" name = "first_name"  class="form-control" value="{{donation.first_name}}" required/></td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td><input type = "text" name = "last_name" class="form-control" value="{{donation.last_name}}" required /></td>
+    </tr>
+
+    <tr>
+        <td>Email</td>
+        <td><input type = "email" name = "email" class="form-control" value="{{donation.email}}" /></td>
+    </tr>
+
+    <tr>
+        <td>Gender</td>
+        <td>
+          Male: <input type = "radio" name = "gender"  value="male" required
+          {% if  donation.gender=='male'  %}
+             checked
+          {% endif  %}
+          />
+         Female: <input type = "radio" name = "gender"  value="female" required
+         {% if  donation.gender=='female'  %}
+         checked
+      {% endif  %}
+         />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Food Type</td>
+        <td>
+        <select name="foodtype" class="form-control">
+            <option value="dry dog food"
+            {% if 'drydogfood' in donation.foodtype %}
+            selected
+           {% endif %}
+           
+            >dry dog food (lbs)</option>
+            <option value="canned dog food"
+            {% if 'canneddogfood' in donation.foodtype %}
+              selected
+           {% endif %}
+            >wet dog food (oz)</option>
+            <option value="moist meaty"
+            {% if 'moistmeaty' in donation.foodtype %}
+              selected
+           {% endif %}
+            >moist meaty</option>
+            <option value="dry cat food"
+            {% if 'drycatfood' in donation.foodtype %}
+            selected
+          {% endif %}
+            >dry cat food (lbs)</option>
+            <option value="canned cat food"
+            {% if 'cannedcatfood' in donation.foodtype %}
+            selected
+           {% endif %}
+            >canned cat food (oz)</option>
+            <option value="dog treats"
+            {% if 'dogtreats' in donation.foodtype %}
+            selected
+          {% endif %}
+            >dog treats (# of boxes)</option>
+            <option value="cat treats"
+            {% if 'cattreats' in donation.foodtype %}
+            selected
+          {% endif %}
+            >cat treats (# of boxes)</option>
+            <option value="litter"
+            {% if 'litter' in donation.foodtype %}
+            selected
+           {% endif %}
+            >litter</option>
+            <option value="bird"
+            {% if 'bird' in donation.foodtype %}
+            selected
+          {% endif %}
+            >bird</option>
+            <option value="hamster"
+            {% if 'hamster' in donation.foodtype %}
+            selected
+          {% endif %}
+            >hamster</option>
+            <option value="gerbil"
+            {% if 'gerbil' in donation.foodtype %}
+            selected
+           {% endif %}
+            >gerbil</option>
+            <option value="rabbit"
+            {% if 'rabbit' in donation.foodtype %}
+            selected
+          {% endif %}
+            >rabbit</option>
+            <option value="guinea pig"
+            {% if 'guineapig' in donation.foodtype %}
+            selected
+          {% endif %}
+            >guinea pig</option>
+            <option value="ferret"
+            {% if 'ferret' in donation.foodtype %}
+            selected
+           {% endif %}
+            >ferret</option>
+            <option value="turtle"
+            {% if 'turtle' in donation.foodtype %}
+            selected
+          {% endif %}
+            >turtle</option>
+            <option value="frog"
+            {% if 'frog' in donation.foodtype %}
+            selected
+          {% endif %}
+            >frog</option>
+            <option value="other"
+            {% if 'other' in donation.foodtype %}
+            selected
+          {% endif %}
+            >other</option>
+         </select>
+        </td>
+    </tr>
+
+    <tr>
+      <td>Amount</td>
+      <td><input type = "number" name = "amount" step="0.01" class="form-control" value="{{donation.amount}}" required/></td>
+  </tr>
+
+  <tr>
+    <td>Weight</td>
+    <td>
+      LBS <input type = "radio" name = "weight"  value="lbs" required
+      {% if  donation.weight=='LBS'  %}
+         checked
+      {% endif  %}
+      />
+      OZ <input type = "radio" name = "weight"  value="oz" required
+      {% if  donation.weight=='OZ'  %}
+         checked
+      {% endif  %}
+      />
+      Count <input type = "radio" name = "weight"  value="count" required
+      {% if  donation.weight=='Count'  %}
+         checked
+      {% endif  %}
+      />
+
+
+
+     
+
+       
+
+    </td>
+</tr>
+
+<tr>
+    <tr>
+     
+        <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">     
+     
+
+     
+            <input type="submit" name="cancel" value="cancel" href="http://127.0.0.1:5000/" class="btn btn-danger">
+        </td>  
+  
+    </tr>
+</table>
+  
+  </form>
+
+</div>
+{% endblock %}
+
+
